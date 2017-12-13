@@ -423,7 +423,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
     # disable min define to allow usage of std::min
     add_definitions(-DNOMINMAX)
-elseif(NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "^arm")
+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^x86_64")
     # activate sse2 and aes-ni
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2 -maes")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse2 -maes")
